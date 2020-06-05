@@ -62,6 +62,11 @@ def configure_env_variables() -> Configuration:
     configuration = Configuration()
 
     for config_field in fields(configuration):
+        # Only attempt to set config fields from env vars
+        # if such a metadata key exists
+        if 'env_var_name' not in config_field.metadata:
+            continue
+        
         env_var_value = os.environ.get(config_field.metadata['env_var_name'], None)
         if env_var_value is None:
             raise pigeon_exceptions.ConfigException(
@@ -75,6 +80,7 @@ def configure_env_variables() -> Configuration:
 
 def setup_adhoc_logger(name, log_file, formatter=None, level=logging.INFO):
     '''
+    *** Test method. Not intended for production. ***
     To setup as many loggers as you want
     '''
     if formatter is None:
