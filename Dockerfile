@@ -8,8 +8,6 @@ FROM python:3.8.3-slim
 #
 # Setup non-root user and app directory
 #
-RUN apt update
-RUN apt install -y netcat
 
 # Create non-root user account
 

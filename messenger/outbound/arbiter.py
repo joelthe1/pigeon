@@ -49,7 +49,6 @@ def arbitrate_output(queue):
     '''
     Arbitration logic for handling output messages
     '''
-
     for _ in range(int(config.output_handler_count)):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
