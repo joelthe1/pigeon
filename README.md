@@ -20,7 +20,7 @@ To run locally, create a `virtualenv` with `Python 3.8.3` and install from `requ
 
 ```
 # Clone repo
-% git clone git@gitlab.ased.io:piranha/common/pigeon.git
+% git clone git@github.com:joelthe1/pigeon.git
 % cd pigeon
  
 # Setup virtualenv
